@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="GPA-Calc">
+    <output-path>$PROJECT_DIR$/out/artifacts/GPA_Calc</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="alias" value="" />
+        <option name="appClass" value="main.Main" />
+        <option name="description" value="A simple GPA calculator that supports multi algorithms." />
+        <option name="enabledSigning" value="true" />
+        <option name="height" value="600" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/res/picture/ic_converter.png" />
+            <option name="macIcon" value="$PROJECT_DIR$/src/res/picture/icon_converter.icns" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/res/picture/icon_converter.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="keystore" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="GPA-Calc" />
+        <option name="updateMode" value="always" />
+        <option name="vendor" value="" />
+        <option name="version" value="1.0.0" />
+        <option name="width" value="360" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="GPA_Calc.jar">
+        <element id="module-output" name="GPA-Calc" />
+        <element id="library" level="project" name="jfoenix-8.0.9" />
+        <element id="library" level="project" name="fontawesomefx-8.9" />
+      </element>
+    </root>
+  </artifact>
+</component>

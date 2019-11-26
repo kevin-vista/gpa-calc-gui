@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import com.jfoenix.controls.JFXTreeTableColumn?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="rootGridPain" alignment="center" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+  <columnConstraints>
+    <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+    <RowConstraints prefHeight="30.0" />
+    <RowConstraints />
+    <RowConstraints />
+  </rowConstraints>
+  <JFXScrollPane alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+    <children>
+      <JFXTreeTableView fx:id="courseTable" currentItemsCount="20" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="420.0" showRoot="false">
+
+        <columns>
+          <JFXTreeTableColumn fx:id="nameColumn" maxWidth="1.7976931348623157E308" minWidth="150.0" onEditCommit="#onCourseCommit" prefWidth="150.0" text="课程名称" />
+          <JFXTreeTableColumn fx:id="creditColumn" maxWidth="1.7976931348623157E308" minWidth="60.0" onEditCommit="#onCreditCommit" prefWidth="60.0" text="学分" />
+          <JFXTreeTableColumn fx:id="scoreColumn" maxWidth="1.7976931348623157E308" minWidth="60.0" onEditCommit="#onScoreCommit" prefWidth="60.0" text="成绩" />
+        </columns>
+        <columnResizePolicy>
+          <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+      </JFXTreeTableView>
+    </children>
+    <GridPane.margin>
+      <Insets top="4.0" />
+    </GridPane.margin>
+  </JFXScrollPane>
+  <JFXButton buttonType="RAISED" contentDisplay="CENTER" defaultButton="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#onCalculateClicked" prefHeight="42.0" ripplerFill="#005278" style="-fx-background-color: #00a4f0;" text="计算 GPA" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+    <cursor>
+      <Cursor fx:constant="HAND" />
+    </cursor>
+    <GridPane.margin>
+      <Insets bottom="22.0" left="24.0" right="24.0" top="22.0" />
+    </GridPane.margin>
+    <font>
+      <Font name="Microsoft YaHei" size="16.0" />
+    </font>
+  </JFXButton>
+  <Label contentDisplay="CENTER" text="百分制成绩表" textOverrun="LEADING_ELLIPSIS" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+    <GridPane.margin>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="12.0" />
+    </GridPane.margin>
+    <font>
+      <Font name="Microsoft YaHei Bold" size="24.0" />
+    </font>
+  </Label>
+  <Label fx:id="promptLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" textAlignment="JUSTIFY" textFill="DIMGRAY" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+    <font>
+      <Font name="Microsoft YaHei UI Light" size="14.0" />
+    </font>
+    <GridPane.margin>
+      <Insets bottom="4.0" left="68.0" right="68.0" top="4.0" />
+    </GridPane.margin>
+  </Label>
+  <JFXButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="-" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveCourse" prefHeight="25.0" prefWidth="25.0" ripplerFill="GREY" style="-fx-background-color: #d0d0d0;" text="-" textAlignment="JUSTIFY" textFill="#303030" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    <font>
+      <Font name="Microsoft YaHei Bold" size="12.0" />
+    </font>
+    <GridPane.margin>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </GridPane.margin>
+    <opaqueInsets>
+      <Insets />
+    </opaqueInsets>
+  </JFXButton>
+  <JFXButton alignment="CENTER" contentDisplay="CENTER" ellipsisString="+" layoutX="223.0" layoutY="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onAddCourse" prefHeight="25.0" prefWidth="25.0" ripplerFill="GREY" style="-fx-background-color: #d0d0d0;" text="+" textAlignment="JUSTIFY" textFill="#303030" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+    <font>
+      <Font name="Microsoft YaHei" size="12.0" />
+    </font>
+    <opaqueInsets>
+      <Insets />
+    </opaqueInsets>
+    <GridPane.margin>
+      <Insets bottom="5.0" left="5.0" right="35.0" top="5.0" />
+    </GridPane.margin>
+  </JFXButton>
+  <FontAwesomeIconView fx:id="saveIcon" fill="#303030" glyphName="SAVE" onMouseClicked="#onSaveClicked" onMousePressed="#onSavePressed" onMouseReleased="#onSaveReleased" size="25" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+    <font>
+      <Font name="FontAwesome Regular" size="24.0" />
+    </font>
+    <GridPane.margin>
+      <Insets bottom="5.0" left="12.0" right="5.0" top="5.0" />
+    </GridPane.margin>
+  </FontAwesomeIconView>
+</GridPane>
