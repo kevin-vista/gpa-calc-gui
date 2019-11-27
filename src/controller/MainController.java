@@ -15,12 +15,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.converter.DefaultStringConverter;
+import service.Algorithm;
 import service.IOService;
 import service.UIService;
 
 import java.io.IOException;
-
-import static service.Algorithm.resultOf;
 
 public class MainController {
 
@@ -71,14 +70,15 @@ public class MainController {
 
 	@FXML
 	private void onCalculateClicked() {
-		UIService.showDialog(rootGridPain.getScene().getWindow(),
+		UIService.showAlert(rootGridPain.getScene().getWindow(),
 				"GPA计算结果",
-				resultOf(Student.getInstance()) + "\n\n\n(按ESC键关闭此窗口)");
+				Algorithm.resultOf(Student.getInstance()) + "\n\n\n(按ESC键关闭此窗口)");
 	}
 
 	@FXML
 	private void onCourseCommit(TreeTableColumn.CellEditEvent<Course, String> editEvent) {
 		editEvent.getRowValue().getValue().setName(editEvent.getNewValue());
+		student.courses().remove(editEvent.getOldValue());
 		student.courses().put(
 				editEvent.getNewValue(),
 				editEvent.getRowValue().getValue());

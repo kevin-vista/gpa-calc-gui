@@ -17,7 +17,7 @@ public class Main extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("layout/layout_main.fxml"));
 		primaryStage.getIcons().add(new Image("file:src/res/picture/ic_converter.png"));
 		primaryStage.setTitle("GPA 换算器");
-		primaryStage.setScene(new Scene(root, 360, 600));
+		primaryStage.setScene(new Scene(root, 400, 600));
 		primaryStage.show();
 	}
 

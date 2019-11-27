@@ -2,18 +2,15 @@ package service;
 
 import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXDialogLayout;
-import data.Student;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Window;
 
-import static service.Algorithm.resultOf;
-
 public class UIService {
 
-	public static void showDialog(Window currentWindow, String heading, String content) {
-		JFXAlert<String> alert = new JFXAlert<>();
+	public static void showAlert(Window currentWindow, String heading, String content) {
+		JFXAlert<String> alert = new JFXAlert<>(currentWindow);
 		alert.initModality(Modality.APPLICATION_MODAL);
 		alert.setOverlayClose(false);
 

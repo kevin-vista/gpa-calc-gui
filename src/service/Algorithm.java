@@ -5,9 +5,7 @@ import data.Student;
 
 public strictfp class Algorithm {
 
-	private static String FORMAT = "%.4f";
-
-	public static double simple(Student student) {
+	private static double simple(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -31,7 +29,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double standard(Student student) {
+	private static double standard(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -45,7 +43,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double standardAdvanced1(Student student) {
+	private static double standardAdvanced1(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -67,7 +65,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double standardAdvanced2(Student student) {
+	private static double standardAdvanced2(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -89,7 +87,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double pekingUniversity(Student student) {
+	private static double pekingUniversity(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -125,7 +123,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double zhejiangUniversity(Student student) {
+	private static double zhejiangUniversity(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -145,7 +143,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double worldEducationService(Student student) {
+	private static double worldEducationService(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -169,7 +167,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double canadaFourPointThree(Student student) {
+	private static double canadaFourPointThree(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -199,7 +197,7 @@ public strictfp class Algorithm {
 		return numerator / denominator;
 	}
 
-	public static double neuFive(Student student) {
+	private static double northeasternUniversityFive(Student student) {
 		double numerator = 0;
 		double denominator = 0;
 
@@ -216,6 +214,8 @@ public strictfp class Algorithm {
 	}
 
 	public static String resultOf(Student student) {
+		String FORMAT = "%.4f";
+
 		return "简单算法:\t\t\t" + String.format(FORMAT, simple(student)) +
 				"\n标准算法:\t\t\t" + String.format(FORMAT, standard(student)) +
 				"\n标准改进(1):\t\t" + String.format(FORMAT, standardAdvanced1(student)) +
@@ -224,7 +224,7 @@ public strictfp class Algorithm {
 				"\n浙大算法:\t\t\t" + String.format(FORMAT, zhejiangUniversity(student)) +
 				"\nWES算法:\t\t\t" + String.format(FORMAT, worldEducationService(student)) +
 				"\n加拿大(4.3分制):\t" + String.format(FORMAT, canadaFourPointThree(student)) +
-				"\n东北大学(5分制):\t" + String.format(FORMAT, neuFive(student));
+				"\n东北大学(5分制):\t" + String.format(FORMAT, northeasternUniversityFive(student));
 	}
 
 }

@@ -5,13 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public strictfp class Student implements Serializable {
+public class Student implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private static Student singleton;
-
-	private String id;
 
 	private String name;
 
@@ -31,14 +29,6 @@ public strictfp class Student implements Serializable {
 		singleton = student;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -56,13 +46,12 @@ public strictfp class Student implements Serializable {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Student student = (Student) o;
-		return Objects.equals(id, student.id) &&
-				Objects.equals(name, student.name);
+		return Objects.equals(name, student.name);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, name);
+		return Objects.hash(name);
 	}
 
 }
