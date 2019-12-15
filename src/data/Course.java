@@ -16,9 +16,7 @@ public strictfp class Course extends RecursiveTreeObject<Course> implements Seri
 	private double score;
 
 	public Course() {
-		this.name = "";
-		this.credit = 0.0;
-		this.score = 0.0;
+		this("", 0.0, 0.0);
 	}
 
 	public Course(String name, double credit, double score) {

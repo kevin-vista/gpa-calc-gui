@@ -15,11 +15,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.converter.DefaultStringConverter;
-import service.Algorithm;
 import service.IOService;
 import service.UIService;
 
 import java.io.IOException;
+
+import static service.Algorithm.result;
 
 public class MainController {
 
@@ -70,9 +71,10 @@ public class MainController {
 
 	@FXML
 	private void onCalculateClicked() {
+		String result = result(student);
 		UIService.showAlert(rootGridPain.getScene().getWindow(),
 				"GPA计算结果",
-				Algorithm.resultOf(Student.getInstance()) + "\n\n\n(按ESC键关闭此窗口)");
+				result + "\n\n\n(按ESC键关闭此窗口)");
 	}
 
 	@FXML

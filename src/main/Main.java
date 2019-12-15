@@ -21,7 +21,6 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
-
 	public static void main(String[] args) {
 		try {
 			IOService.readStudent(IOService.DATA_FILE);

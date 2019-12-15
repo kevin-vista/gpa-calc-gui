@@ -7,6 +7,8 @@ import java.util.Objects;
 
 public class Student implements Serializable {
 
+	private static final int INITIAL_CAPACITY = 64;
+
 	private static final long serialVersionUID = 1L;
 
 	private static Student singleton;
@@ -16,7 +18,7 @@ public class Student implements Serializable {
 	private Map<String, Course> courses;
 
 	private Student() {
-		courses = new HashMap<>();
+		courses = new HashMap<>(INITIAL_CAPACITY);
 	}
 
 	public static synchronized Student getInstance() {
