@@ -15,17 +15,19 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.converter.DefaultStringConverter;
+import res.Values;
 import service.IOService;
 import service.UIService;
 
 import java.io.IOException;
 
+import static java.lang.String.valueOf;
 import static service.Algorithm.result;
 
 public class MainController {
 
 	@FXML
-	private GridPane rootGridPain;
+	private GridPane rootGridPane;
 	@FXML
 	private FontAwesomeIconView saveIcon;
 	@FXML
@@ -46,7 +48,7 @@ public class MainController {
 		student = Student.getInstance();
 
 		// Initialize courseTable
-		TreeItem<Course> root = new TreeItem<>(new Course());
+		final TreeItem<Course> root = new TreeItem<>(new Course());
 		root.setExpanded(true);
 		courseTable.setRoot(root);
 
@@ -55,24 +57,26 @@ public class MainController {
 		nameColumn.setCellFactory(p -> new TextFieldTreeTableCell<>(new DefaultStringConverter()));
 
 		creditColumn.setCellValueFactory(p ->
-				new ReadOnlyStringWrapper(String.valueOf(p.getValue().getValue().getCredit())));
+				new ReadOnlyStringWrapper(valueOf(p.getValue().getValue().getCredit())));
 		creditColumn.setCellFactory(p -> new TextFieldTreeTableCell<>(new DefaultStringConverter()));
 
 		scoreColumn.setCellValueFactory(p ->
-				new ReadOnlyStringWrapper(String.valueOf(p.getValue().getValue().getScore())));
+				new ReadOnlyStringWrapper(valueOf(p.getValue().getValue().getScore())));
 		scoreColumn.setCellFactory(p -> new TextFieldTreeTableCell<>(new DefaultStringConverter()));
 
-		// Fill courseTable with the singleton Student's courses
+		/*
+		 * Fill courseTable with the singleton Student's courses
 		for (String s : student.courses().keySet()) {
 			root.getChildren().add(new TreeItem<>(student.courses().get(s)));
 			System.out.println("Added course: " + student.courses().get(s).getName());
 		}
+		 */
 	}
 
 	@FXML
 	private void onCalculateClicked() {
 		String result = result(student);
-		UIService.showAlert(rootGridPain.getScene().getWindow(),
+		UIService.showAlert(rootGridPane.getScene().getWindow(),
 				"GPA计算结果",
 				result + "\n\n\n(按ESC键关闭此窗口)");
 	}
@@ -153,11 +157,11 @@ public class MainController {
 	// Simulates an animation effect for the 'save' icon
 	@FXML
 	private void onSavePressed() {
-		saveIcon.setFont(Font.font("FontAwesome Regular", 23));
+		saveIcon.setFont(Font.font(Values.FONT_AWESOME, Values.SAVE_BUTTON_SMALL_SIZE));
 	}
 	@FXML
 	private void onSaveReleased() {
-		saveIcon.setFont(Font.font("FontAwesome Regular", 25));
+		saveIcon.setFont(Font.font(Values.FONT_AWESOME, Values.SAVE_BUTTON_LARGE_SIZE));
 	}
 
 }

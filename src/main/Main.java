@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import res.Values;
 import service.IOService;
 
 import java.io.IOException;
@@ -16,8 +17,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("layout/layout_main.fxml"));
 		primaryStage.getIcons().add(new Image("file:src/res/picture/ic_converter.png"));
-		primaryStage.setTitle("GPA 换算器");
-		primaryStage.setScene(new Scene(root, 400, 600));
+		primaryStage.setTitle(Values.TITLE);
+		primaryStage.setScene(new Scene(root, Values.WINDOW_WIDTH, Values.WINDOW_HEIGHT));
 		primaryStage.show();
 	}
 

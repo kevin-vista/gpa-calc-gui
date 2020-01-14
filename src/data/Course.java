@@ -9,6 +9,8 @@ public strictfp class Course extends RecursiveTreeObject<Course> implements Seri
 
 	private static final long serialVersionUID = 1L;
 
+	private static final double DEFAULT = 0.0;
+
 	private String name;
 
 	private double credit;
@@ -16,7 +18,7 @@ public strictfp class Course extends RecursiveTreeObject<Course> implements Seri
 	private double score;
 
 	public Course() {
-		this("", 0.0, 0.0);
+		this("", DEFAULT, DEFAULT);
 	}
 
 	public Course(String name, double credit, double score) {
@@ -65,7 +67,7 @@ public strictfp class Course extends RecursiveTreeObject<Course> implements Seri
 
 	@Override
 	public String toString() {
-		return "课程名称: " + name
+		return "课程: " + name
 				+ ", 百分制成绩: " + score
 				+ ", 学分: " + credit;
 	}
