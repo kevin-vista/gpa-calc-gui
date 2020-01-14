@@ -4,7 +4,7 @@
 
 ## 使用说明
 
-1. 在[这里](https://github.com/kevin-vista/gpa-calc-gui/releases)下载名为 __GPA-Calc-win-**.zip__ 的压缩包并解压
+1. [下载](https://github.com/kevin-vista/gpa-calc-gui/releases)名为 __GPA-Calc-win-**.zip__ 的压缩包并解压
 2. 运行 __GPA-Calc.exe__
 3. 单击右上角的 __+__ 或 __-__ 添加或删除一门课程
 4. 单击任意一行以选中相应课程
